@@ -1,7 +1,7 @@
 pragma solidity ^0.4.17;
 
 contract Election {
-  
+
   struct Candidate {
     uint id;
     string name;
@@ -32,6 +32,6 @@ contract Election {
     require(_candidateId > 0 && _candidateId <= candidatesCount);
     isVoted[msg.sender] = true;
     candidates[_candidateId].votes++;
-     votedEvent(_candidateId);
+    votedEvent(_candidateId);
   }
 }
