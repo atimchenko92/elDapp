@@ -17,9 +17,9 @@ contract Election {
   );
 
   function Election() public {
-    addCandidate("Путин");
-    addCandidate("Собчак");
-    addCandidate("Навальный");
+    addCandidate("Candidate#1");
+    addCandidate("Candidate#2");
+    addCandidate("Candidate#3");
   }
 
   function addCandidate(string _name) private {
@@ -32,6 +32,6 @@ contract Election {
     require(_candidateId > 0 && _candidateId <= candidatesCount);
     isVoted[msg.sender] = true;
     candidates[_candidateId].votes++;
-    votedEvent(_candidateId);
+    emit votedEvent(_candidateId);
   }
 }
